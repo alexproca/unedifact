@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:Q1="urn:org.milyn.edi.unedifact:un:d96a:common" xmlns:baplie="urn:org.milyn.edi.unedifact:un:d96a:baplie" targetNamespace="urn:org.milyn.edi.unedifact:un:d96a:baplie">
+  <xsd:import namespace="urn:org.milyn.edi.unedifact:un:d96a:common"/>
+  <xsd:element name="BAPLIE" type="baplie:BAPLIE"/>
+  <xsd:complexType name="SegmentGroup2">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 2:
+       A group of segments identifying the means of transport and
+       related details.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="TDT" type="Q1:Tdt"/>
+      <xsd:element form="qualified" maxOccurs="2" name="LOC" type="Q1:Loc"/>
+      <xsd:element form="qualified" maxOccurs="99" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" minOccurs="0" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup4">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 4:
+          A group of segments containing information about the type of
+          equipment.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="EQD" type="Q1:Eqd"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="EQA" type="Q1:Eqa"/>
+      <xsd:element form="qualified" minOccurs="0" name="NAD" type="Q1:Nad"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup3">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 3:
+                         SG5
+       A group of segments containing information about the equipment
+       and/or goods and its stowage location onboard a vessel.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="LOC_-_-1" type="Q1:Loc"/>
+      <xsd:element form="qualified" minOccurs="0" name="GID" type="Q1:Gid"/>
+      <xsd:element form="qualified" minOccurs="0" name="GDS" type="Q1:Gds"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+      <xsd:element form="qualified" maxOccurs="9" name="MEA" type="Q1:Mea"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="DIM" type="Q1:Dim"/>
+      <xsd:element form="qualified" minOccurs="0" name="TMP" type="Q1:Tmp"/>
+      <xsd:element form="qualified" minOccurs="0" name="RNG" type="Q1:Rng"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="LOC_-_-2" type="Q1:Loc"/>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" maxOccurs="3" minOccurs="0" name="Segment_group_4" type="baplie:SegmentGroup4"/>
+      <xsd:element form="qualified" maxOccurs="999" minOccurs="0" name="Segment_group_5" type="baplie:SegmentGroup5"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup1">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 1:
+       A group of segments to specify the document or message to which
+       the current message relates, and related date and time.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="BAPLIE">
+    <xsd:sequence>
+      <xsd:element form="qualified" name="BGM" type="Q1:Bgm"/>
+      <xsd:element form="qualified" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_1" type="baplie:SegmentGroup1"/>
+      <xsd:element form="qualified" maxOccurs="3" minOccurs="0" name="NAD" type="Q1:Nad"/>
+      <xsd:element form="qualified" maxOccurs="3" name="Segment_group_2" type="baplie:SegmentGroup2"/>
+      <xsd:element form="qualified" maxOccurs="9999" minOccurs="0" name="Segment_group_3" type="baplie:SegmentGroup3"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup5">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 5:
+          A group of segments containing information about dangerous
+          cargo.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="DGS" type="Q1:Dgs"/>
+      <xsd:element form="qualified" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

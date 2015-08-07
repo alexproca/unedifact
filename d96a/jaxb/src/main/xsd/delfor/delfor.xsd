@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:Q1="urn:org.milyn.edi.unedifact:un:d96a:common" xmlns:delfor="urn:org.milyn.edi.unedifact:un:d96a:delfor" targetNamespace="urn:org.milyn.edi.unedifact:un:d96a:delfor">
+  <xsd:import namespace="urn:org.milyn.edi.unedifact:un:d96a:common"/>
+  <xsd:element name="DELFOR" type="delfor:DELFOR"/>
+  <xsd:complexType name="SegmentGroup1">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 1:
+       A group of segments giving references relevant to the whole
+       message, e.g. contract number.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup4">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 4:
+       A group containing delivery names and addresses, related
+       information and details of line items to be consigned to the
+       delivery points.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="NAD" type="Q1:Nad"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="LOC" type="Q1:Loc"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_5" type="delfor:SegmentGroup5"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="Segment_group_6" type="delfor:SegmentGroup6"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_7" type="delfor:SegmentGroup7"/>
+      <xsd:element form="qualified" maxOccurs="9999" minOccurs="0" name="Segment_group_8" type="delfor:SegmentGroup8"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup8">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 8:
+                            SG9-SG10-SG11-SG12-SG14
+          A group of segments providing details of the individual line
+          items for the specified delivery point.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="LIN" type="Q1:Lin"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="PIA" type="Q1:Pia"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="IMD" type="Q1:Imd"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="MEA" type="Q1:Mea"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="ALI" type="Q1:Ali"/>
+      <xsd:element form="qualified" maxOccurs="100" minOccurs="0" name="GIN" type="Q1:Gin"/>
+      <xsd:element form="qualified" maxOccurs="100" minOccurs="0" name="GIR" type="Q1:Gir"/>
+      <xsd:element form="qualified" maxOccurs="100" minOccurs="0" name="LOC" type="Q1:Loc"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="Segment_group_9" type="delfor:SegmentGroup9"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_10" type="delfor:SegmentGroup10"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_11" type="delfor:SegmentGroup11"/>
+      <xsd:element form="qualified" maxOccurs="200" minOccurs="0" name="Segment_group_12" type="delfor:SegmentGroup12"/>
+      <xsd:element form="qualified" maxOccurs="50" minOccurs="0" name="Segment_group_14" type="delfor:SegmentGroup14"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup23">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 23:
+             A segment identifying markings and labels and ,if
+             relevant, package numbers.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="PCI" type="Q1:Pci"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="GIN" type="Q1:Gin"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup17">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 17:
+                   A group of segments for referencing quantity
+                   variance information.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup30">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 30:
+                A group of segments for referencing quantity variance
+                information.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup14">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 14:
+             A group of segments identifying the packaging, physical
+             dimensions, and marks and numbers for goods referenced in
+             the line item to be delivered.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="PAC" type="Q1:Pac"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="MEA" type="Q1:Mea"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="QTY" type="Q1:Qty"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_15" type="delfor:SegmentGroup15"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_16" type="delfor:SegmentGroup16"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup13">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 13:
+                A group of segments for referencing specific product
+                delivery release information and where necessary their
+                date.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup11">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 11:
+             A group of segments specifying details of the mode and
+             means of transport, and date/time of departure and
+             destination relating to the specified location.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="TDT" type="Q1:Tdt"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup9">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 9:
+             A group of segments to identify the person, function or a
+             department and appropriate numbers to whom communication
+             should be directed.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CTA" type="Q1:Cta"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="COM" type="Q1:Com"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup18">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 18:
+                         SG22-SG24
+       The detail section consists of two main Segment groups, Segment
+       group 4 and Segment group 18. The use of Segment group 18
+       assumes that Segment group 4 has not been used.
+       
+       A group of segments that contains a line item and its related
+       information and details of delivery names and addresses for
+       each delivery location to which goods from the line items
+       should be consigned.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="LIN" type="Q1:Lin"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="PIA" type="Q1:Pia"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="IMD" type="Q1:Imd"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="MEA" type="Q1:Mea"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="ALI" type="Q1:Ali"/>
+      <xsd:element form="qualified" maxOccurs="100" minOccurs="0" name="GIN" type="Q1:Gin"/>
+      <xsd:element form="qualified" maxOccurs="100" minOccurs="0" name="GIR" type="Q1:Gir"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_19" type="delfor:SegmentGroup19"/>
+      <xsd:element form="qualified" maxOccurs="50" minOccurs="0" name="Segment_group_20" type="delfor:SegmentGroup20"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_22" type="delfor:SegmentGroup22"/>
+      <xsd:element form="qualified" maxOccurs="500" minOccurs="0" name="Segment_group_24" type="delfor:SegmentGroup24"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup24">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 24:
+          A group of segments providing details of the individual
+          delivery points.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="NAD" type="Q1:Nad"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="LOC" type="Q1:Loc"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_25" type="delfor:SegmentGroup25"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="Segment_group_26" type="delfor:SegmentGroup26"/>
+      <xsd:element form="qualified" maxOccurs="50" minOccurs="0" name="Segment_group_27" type="delfor:SegmentGroup27"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_29" type="delfor:SegmentGroup29"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_31" type="delfor:SegmentGroup31"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup19">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 19:
+          A group of segment giving references related to the line
+          item and where necessary, their dates.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup22">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 22:
+          A group of segments identifying the packaging, physical
+          dimensions, and marks and numbers for goods referenced in
+          the line item to be delivered.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="PAC" type="Q1:Pac"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="MEA" type="Q1:Mea"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="QTY" type="Q1:Qty"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_23" type="delfor:SegmentGroup23"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup29">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 29:
+             A group of segments specifying details regarding quantity
+             variations relevant to the line item and delivery point
+             to be delivered.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="QVR" type="Q1:Qvr"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_30" type="delfor:SegmentGroup30"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup10">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 10:
+             A group of segments giving references related to the line
+             item and where necessary, their dates.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup28">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 28:
+                A group of segment for referencing specific product
+                delivery release information and, where necessary,
+                their dates.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup7">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 7:
+          A group of segments specifying details of the mode and means
+          of transport, and date/time of departure and destination
+          relating to specified delivery point.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="TDT" type="Q1:Tdt"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup31">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 31:
+             A group of segments specifying details of the mode and
+             means of transport, and date/time of departure and
+             destination relating to the specified location.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="TDT" type="Q1:Tdt"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup6">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 6:
+          A group of segments to identify a person or department and
+          appropriate numbers to whom communication should be
+          directed.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CTA" type="Q1:Cta"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="COM" type="Q1:Com"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup5">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 5:
+          A group of segments providing information relating to
+          documents required for the delivery point.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="DOC" type="Q1:Doc"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup27">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 27:
+             A group of segments specifying quantity related
+             information for actual delivery, reporting or cumulative
+             quantities and forecast quantities as required for the
+             delivery point.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="QTY" type="Q1:Qty"/>
+      <xsd:element form="qualified" minOccurs="0" name="SCC" type="Q1:Scc"/>
+      <xsd:element form="qualified" maxOccurs="2" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_28" type="delfor:SegmentGroup28"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup2">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 2:
+       A group of segments identifying names, addresses, locations,
+       and contacts relevant to the whole Delivery Schedule.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="NAD" type="Q1:Nad"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="LOC" type="Q1:Loc"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="Segment_group_3" type="delfor:SegmentGroup3"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup12">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 12:
+             A group of segments specifying quantity related
+             information for actual delivery, reporting or cumulative
+             quantities and forecast quantities as required for the
+             line item.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="QTY" type="Q1:Qty"/>
+      <xsd:element form="qualified" minOccurs="0" name="SCC" type="Q1:Scc"/>
+      <xsd:element form="qualified" maxOccurs="2" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_13" type="delfor:SegmentGroup13"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup25">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 25:
+             A group of segment providing information relating to
+             documents required for the delivery point.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="DOC" type="Q1:Doc"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup21">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 21:
+             A group of segment for referencing specific product
+             delivery release information and where necessary their
+             date.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup26">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 26:
+             A group of segments to identify a person or a department
+             and appropriate numbers to whom communication should be
+             directed.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CTA" type="Q1:Cta"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="COM" type="Q1:Com"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup3">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 3:
+          A group of segments to identify people, functions, or
+          departments and appropriate numbers to whom communication
+          should be directed.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CTA" type="Q1:Cta"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="COM" type="Q1:Com"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup15">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 15:
+                A group of segments identifying markings and labels
+                and if relevant package numbers.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="PCI" type="Q1:Pci"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="GIN" type="Q1:Gin"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DELFOR">
+    <xsd:sequence>
+      <xsd:element form="qualified" name="BGM" type="Q1:Bgm"/>
+      <xsd:element form="qualified" maxOccurs="10" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_1" type="delfor:SegmentGroup1"/>
+      <xsd:element form="qualified" maxOccurs="20" minOccurs="0" name="Segment_group_2" type="delfor:SegmentGroup2"/>
+      <xsd:element form="qualified" name="UNS_-_-1" type="Q1:Uns"/>
+      <xsd:element form="qualified" maxOccurs="500" minOccurs="0" name="Segment_group_4" type="delfor:SegmentGroup4"/>
+      <xsd:element form="qualified" maxOccurs="9999" minOccurs="0" name="Segment_group_18" type="delfor:SegmentGroup18"/>
+      <xsd:element form="qualified" name="UNS_-_-2" type="Q1:Uns"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="CNT" type="Q1:Cnt"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup20">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 20:
+          A group of segments specifying quantity related information
+          for actual delivery, reporting or cumulative quantities and
+          forecast quantities as required for the line item.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="QTY" type="Q1:Qty"/>
+      <xsd:element form="qualified" minOccurs="0" name="SCC" type="Q1:Scc"/>
+      <xsd:element form="qualified" maxOccurs="2" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_21" type="delfor:SegmentGroup21"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup16">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 16:
+                A group of segments specifying details regarding
+                quantity variations relevant to the line item to be
+                delivered.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="QVR" type="Q1:Qvr"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_17" type="delfor:SegmentGroup17"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

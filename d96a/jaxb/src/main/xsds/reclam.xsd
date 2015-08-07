@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:Q1="urn:org.milyn.edi.unedifact:un:d96a:common" xmlns:reclam="urn:org.milyn.edi.unedifact:un:d96a:reclam" targetNamespace="urn:org.milyn.edi.unedifact:un:d96a:reclam">
+  <xsd:import namespace="urn:org.milyn.edi.unedifact:un:d96a:common"/>
+  <xsd:element name="RECLAM" type="reclam:RECLAM"/>
+  <xsd:complexType name="SegmentGroup6">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 6:
+             A group of segments to provide all the information
+             regarding amounts and converted amounts of the original
+             insurance policy contract.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="MOA" type="Q1:Moa"/>
+      <xsd:element form="qualified" maxOccurs="3" name="GIS" type="Q1:Gis"/>
+      <xsd:element form="qualified" minOccurs="0" name="CUX" type="Q1:Cux"/>
+      <xsd:element form="qualified" maxOccurs="2" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup8">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 8:
+       A group of segments to specify the amounts of the reinsurance
+       contract in three non-equivalent currencies.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CUX" type="Q1:Cux"/>
+      <xsd:element form="qualified" maxOccurs="999" name="Segment_group_9" type="reclam:SegmentGroup9"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup9">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 9:
+          A group of segments to provide all the information related
+          to the amounts and their currency conversion for the
+          reinsurance contract.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="MOA" type="Q1:Moa"/>
+      <xsd:element form="qualified" maxOccurs="2" minOccurs="0" name="PCD" type="Q1:Pcd"/>
+      <xsd:element form="qualified" minOccurs="0" name="CUX" type="Q1:Cux"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="Segment_group_10" type="reclam:SegmentGroup10"/>
+      <xsd:element form="qualified" maxOccurs="11" name="GIS" type="Q1:Gis"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup2">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 2:
+       A group of segments to specify relevant parties for the whole
+       transaction.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="NAD" type="Q1:Nad"/>
+      <xsd:element form="qualified" minOccurs="0" name="PCD" type="Q1:Pcd"/>
+      <xsd:element form="qualified" minOccurs="0" name="CTA" type="Q1:Cta"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="COM" type="Q1:Com"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" maxOccurs="2" minOccurs="0" name="GIS" type="Q1:Gis"/>
+      <xsd:element form="qualified" maxOccurs="2" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup7">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 7:
+          A group of segments to identify the parties involved in the
+          original insurance policy section.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="NAD" type="Q1:Nad"/>
+      <xsd:element form="qualified" minOccurs="0" name="PCD" type="Q1:Pcd"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup5">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 5:
+          A group of segments to specify the amounts of the original
+          insurance policy contract in three non-equivalent
+          currencies.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CUX" type="Q1:Cux"/>
+      <xsd:element form="qualified" minOccurs="0" name="GIS" type="Q1:Gis"/>
+      <xsd:element form="qualified" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+      <xsd:element form="qualified" maxOccurs="99" name="Segment_group_6" type="reclam:SegmentGroup6"/>
+      <xsd:element form="qualified" name="PCD" type="Q1:Pcd"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup1">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 1:
+       A group of segments to transmit general processing indicators
+       and to specify loss or event details.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="GIS" type="Q1:Gis"/>
+      <xsd:element form="qualified" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RECLAM">
+    <xsd:sequence>
+      <xsd:element form="qualified" maxOccurs="14" name="Segment_group_1" type="reclam:SegmentGroup1"/>
+      <xsd:element form="qualified" maxOccurs="212" name="Segment_group_2" type="reclam:SegmentGroup2"/>
+      <xsd:element form="qualified" maxOccurs="8" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="999" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_3" type="reclam:SegmentGroup3"/>
+      <xsd:element form="qualified" minOccurs="0" name="LOC" type="Q1:Loc"/>
+      <xsd:element form="qualified" minOccurs="0" name="MOA" type="Q1:Moa"/>
+      <xsd:element form="qualified" minOccurs="0" name="PCD" type="Q1:Pcd"/>
+      <xsd:element form="qualified" maxOccurs="90" minOccurs="0" name="Segment_group_4" type="reclam:SegmentGroup4"/>
+      <xsd:element form="qualified" name="UNS" type="Q1:Uns"/>
+      <xsd:element form="qualified" maxOccurs="3" minOccurs="0" name="Segment_group_8" type="reclam:SegmentGroup8"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup10">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 10:
+             A group of segments to make reference to previous loss
+             notifications in case an aggregate deductible is
+             applicable.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" minOccurs="0" name="COM" type="Q1:Com"/>
+      <xsd:element form="qualified" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup4">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 4:
+       A group of segments to specify the class, line or sub-line of
+       business.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="GIS" type="Q1:Gis"/>
+      <xsd:element form="qualified" maxOccurs="8" minOccurs="0" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="LOC" type="Q1:Loc"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="3" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+      <xsd:element form="qualified" maxOccurs="2" minOccurs="0" name="PCD" type="Q1:Pcd"/>
+      <xsd:element form="qualified" maxOccurs="3" minOccurs="0" name="Segment_group_5" type="reclam:SegmentGroup5"/>
+      <xsd:element form="qualified" maxOccurs="13" minOccurs="0" name="Segment_group_7" type="reclam:SegmentGroup7"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup3">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 3:
+       A group of segments to provide information concerning the loss
+       or event, and the reinsurance contract.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" minOccurs="0" name="COM" type="Q1:Com"/>
+      <xsd:element form="qualified" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

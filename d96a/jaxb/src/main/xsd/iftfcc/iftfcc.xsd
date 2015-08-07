@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:Q1="urn:org.milyn.edi.unedifact:un:d96a:common" xmlns:iftfcc="urn:org.milyn.edi.unedifact:un:d96a:iftfcc" targetNamespace="urn:org.milyn.edi.unedifact:un:d96a:iftfcc">
+  <xsd:import namespace="urn:org.milyn.edi.unedifact:un:d96a:common"/>
+  <xsd:element name="IFTFCC" type="iftfcc:IFTFCC"/>
+  <xsd:complexType name="SegmentGroup30">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 30:
+          A group of segments to specify locations and related
+          date(s)/time(s) which apply to the consignment, such as
+          place of transhipment.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="LOC" type="Q1:Loc"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup2">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 2:
+       A group of segments to identify references related to the
+       IFTFCC message.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup8">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 8:
+          A group of segments to specify an amount related to the
+          charge. Only one of the segments or segment groups below the
+          trigger segment MOA can be used. The amount resulting from
+          the calculation within one occurrence of this MOA-group is
+          placed in another occurrence of this MOA-group, which in
+          turn may form the basis for an additional calculation.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="MOA" type="Q1:Moa"/>
+      <xsd:element form="qualified" minOccurs="0" name="Segment_group_9" type="iftfcc:SegmentGroup9"/>
+      <xsd:element form="qualified" minOccurs="0" name="PCD" type="Q1:Pcd"/>
+      <xsd:element form="qualified" minOccurs="0" name="Segment_group_10" type="iftfcc:SegmentGroup10"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup36">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 36:
+             A group of segments to provide contact information for
+             the party.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CTA" type="Q1:Cta"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="COM" type="Q1:Com"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup44">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 44:
+             A group of segments to identify the equipment owner.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="NAD" type="Q1:Nad"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup26">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 26:
+          A group of segments to identify the equipment owner.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="NAD" type="Q1:Nad"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup43">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 43:
+             A group of segments giving a reference to the equipment
+             details (such as contract number) and or providing a
+             cross-reference to a charge item on the message level
+             directly above (i.e., CNI-level).</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup39">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 39:
+             A group of segments to specify dimensions applicable to a
+             goods item.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="DIM" type="Q1:Dim"/>
+      <xsd:element form="qualified" minOccurs="0" name="EQN" type="Q1:Eqn"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup24">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 24:
+                         SG27
+       A group of segments describing equipment details for which the
+       charge(s) applies. The charges can be detailed on message top
+       level (TCC segment group).</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="EQD" type="Q1:Eqd"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="TCC" type="Q1:Tcc"/>
+      <xsd:element form="qualified" minOccurs="0" name="EQN" type="Q1:Eqn"/>
+      <xsd:element form="qualified" minOccurs="0" name="TMD" type="Q1:Tmd"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="MEA" type="Q1:Mea"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="DIM" type="Q1:Dim"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="SEL" type="Q1:Sel"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="TPL" type="Q1:Tpl"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_25" type="iftfcc:SegmentGroup25"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_26" type="iftfcc:SegmentGroup26"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="Segment_group_27" type="iftfcc:SegmentGroup27"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup13">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 13:
+          A group of segments to give references relevant to the
+          party.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup18">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 18:
+          A group of segments giving a reference to the transport
+          details (such as voyage number) and or providing a
+          cross-reference to a charge item (Segment group 6:
+          TCC-group) on message top level.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup22">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 22:
+          A group of segments to identify references to a goods item.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup21">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 21:
+          A group of segments to specify dimensions applicable to a
+          goods item.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="DIM" type="Q1:Dim"/>
+      <xsd:element form="qualified" minOccurs="0" name="EQN" type="Q1:Eqn"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup23">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 23:
+          A group of segments to specify dangerous goods details
+          related to the goods item. One goods item may be in
+          different dangerous goods classes.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="DGS" type="Q1:Dgs"/>
+      <xsd:element form="qualified" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup38">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 38:
+             A group of segments to specify measurements applicable to
+             a goods item.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="MEA" type="Q1:Mea"/>
+      <xsd:element form="qualified" minOccurs="0" name="EQN" type="Q1:Eqn"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup12">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 12:
+          A group of segments identifying a contact and its
+          communications related to the party.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CTA" type="Q1:Cta"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="COM" type="Q1:Com"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup3">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 3:
+       A group of segments to specify amounts resulting from the
+       specification of the charges in this message.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="MOA" type="Q1:Moa"/>
+      <xsd:element form="qualified" minOccurs="0" name="PCD" type="Q1:Pcd"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup10">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 10:
+             A group of segments to specify tax-related information
+             for the charge.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="TAX" type="Q1:Tax"/>
+      <xsd:element form="qualified" minOccurs="0" name="PCD" type="Q1:Pcd"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup11">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 11:
+       A segment group to specify parties related to the IFTFCC
+       message and their banking information.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="NAD" type="Q1:Nad"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="FII" type="Q1:Fii"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="LOC" type="Q1:Loc"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_12" type="iftfcc:SegmentGroup12"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_13" type="iftfcc:SegmentGroup13"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup37">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 37:
+                            SG39-SG40-SG41
+          A group of segments describing goods item details for which
+          the charge(s) of this consignment applies. The charges of
+          this consignment can be detailed on message top level (TCC
+          segment group).</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="GID" type="Q1:Gid"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="TCC" type="Q1:Tcc"/>
+      <xsd:element form="qualified" minOccurs="0" name="HAN" type="Q1:Han"/>
+      <xsd:element form="qualified" minOccurs="0" name="TMP" type="Q1:Tmp"/>
+      <xsd:element form="qualified" minOccurs="0" name="TMD" type="Q1:Tmd"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="LOC" type="Q1:Loc"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="PCI" type="Q1:Pci"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="PIA" type="Q1:Pia"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_38" type="iftfcc:SegmentGroup38"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_39" type="iftfcc:SegmentGroup39"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_40" type="iftfcc:SegmentGroup40"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_41" type="iftfcc:SegmentGroup41"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup31">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 31:
+          A group of segments giving a reference to the consignment
+          specified and or providing a cross-reference to a charge
+          item on message top level (segment group 6: TCC-group).</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup6">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 6:
+       A group of segments to specify a charge and the charge
+       calculation methodology, for example related to:
+       -   a transport service contract, or
+       -   a transport document or contract as referred to on message
+       top level or in this group of segments
+       -   the set of voyages or conveyances or flights (in case of
+       among others port charges) or the set of equipments or
+       containers (in case of among others container lease contracts
+       or terminal operations) or the set of consignments specified in
+       the message over a certain period of time as mentioned on
+       message top level.
+       Full details relating to a specific charge can only be
+       specified in this TCC segment group (i.e. in message top
+       level). The charges as detailed in this segment group may be
+       pointed to by one or more other TCC segments elsewhere in the
+       message (i.e. one of the lower levels). When a TCC segment on
+       one of the lower levels of this message is used as a pointer,
+       then only the data element 'Freight and charges item number'
+       (in composite C200) is to be used, with a value that
+       corresponds to the value of the same data element in a TCC
+       segment on message top level.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="TCC" type="Q1:Tcc"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="LOC" type="Q1:Loc"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="PCD" type="Q1:Pcd"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="QTY" type="Q1:Qty"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_7" type="iftfcc:SegmentGroup7"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_8" type="iftfcc:SegmentGroup8"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup1">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 1:
+       A group of segments to indicate locations relevant to the
+       IFTFCC message.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="LOC" type="Q1:Loc"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup20">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 20:
+          A group of segments to specify measurements applicable to a
+          goods item.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="MEA" type="Q1:Mea"/>
+      <xsd:element form="qualified" minOccurs="0" name="EQN" type="Q1:Eqn"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup17">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 17:
+       A group of segments describing transport details or voyages or
+       conveyances or flights to which the charges apply or which form
+       a reference for the consignments or goods items charged for in
+       the IFTFCC message.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="TDT" type="Q1:Tdt"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="TCC" type="Q1:Tcc"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="LOC" type="Q1:Loc"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_18" type="iftfcc:SegmentGroup18"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup33">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 33:
+          A group of segments to specify a payment instruction
+          relating to this consignment.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CPI" type="Q1:Cpi"/>
+      <xsd:element form="qualified" minOccurs="0" name="CUX" type="Q1:Cux"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="LOC" type="Q1:Loc"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="MOA" type="Q1:Moa"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup41">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 41:
+             A group of segments to specify dangerous goods details
+             related to the goods item. One goods item may be in
+             different dangerous goods classes.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="DGS" type="Q1:Dgs"/>
+      <xsd:element form="qualified" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup9">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 9:
+             A group of segments to specify an exchange rate by which
+             an amount can be re-calculated.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CUX" type="Q1:Cux"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup14">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 14:
+       A group of segments to specify the terms of transport or
+       delivery, applicable to this whole message.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="TOD" type="Q1:Tod"/>
+      <xsd:element form="qualified" maxOccurs="2" minOccurs="0" name="LOC" type="Q1:Loc"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup15">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 15:
+       A group of segments containing information as per original
+       instruction on the charges that will be paid by the party
+       charged in this message.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CPI" type="Q1:Cpi"/>
+      <xsd:element form="qualified" minOccurs="0" name="CUX" type="Q1:Cux"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="LOC" type="Q1:Loc"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="MOA" type="Q1:Moa"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup27">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 27:
+          A group of segments to specify the attached equipment and
+          related number of pieces.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="EQA" type="Q1:Eqa"/>
+      <xsd:element form="qualified" minOccurs="0" name="EQN" type="Q1:Eqn"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup16">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 16:
+       A group of segments specifying the payment terms applicable to
+       the freight costs and/or other charges charged for in this
+       IFTFCC message.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="PAT" type="Q1:Pat"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" minOccurs="0" name="PCD" type="Q1:Pcd"/>
+      <xsd:element form="qualified" minOccurs="0" name="MOA" type="Q1:Moa"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="IFTFCC">
+    <xsd:sequence>
+      <xsd:element form="qualified" name="BGM" type="Q1:Bgm"/>
+      <xsd:element form="qualified" minOccurs="0" name="CTA" type="Q1:Cta"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="COM" type="Q1:Com"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="TSR" type="Q1:Tsr"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="DOC" type="Q1:Doc"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_1" type="iftfcc:SegmentGroup1"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_2" type="iftfcc:SegmentGroup2"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="Segment_group_3" type="iftfcc:SegmentGroup3"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_4" type="iftfcc:SegmentGroup4"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_5" type="iftfcc:SegmentGroup5"/>
+      <xsd:element form="qualified" maxOccurs="999" minOccurs="0" name="Segment_group_6" type="iftfcc:SegmentGroup6"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="Segment_group_11" type="iftfcc:SegmentGroup11"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="Segment_group_14" type="iftfcc:SegmentGroup14"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_15" type="iftfcc:SegmentGroup15"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="Segment_group_16" type="iftfcc:SegmentGroup16"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="Segment_group_17" type="iftfcc:SegmentGroup17"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="Segment_group_19" type="iftfcc:SegmentGroup19"/>
+      <xsd:element form="qualified" maxOccurs="999" minOccurs="0" name="Segment_group_24" type="iftfcc:SegmentGroup24"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="Segment_group_28" type="iftfcc:SegmentGroup28"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup29">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 29:
+          A group of segments to specify a default currency or
+          exchange rate applicable to this consignment.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CUX" type="Q1:Cux"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup19">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 19:
+                         SG22-SG23
+       A group of segments describing goods item details for which the
+       charge(s) applies. The charges can be detailed on message top
+       level (TCC segment group).</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="GID" type="Q1:Gid"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="TCC" type="Q1:Tcc"/>
+      <xsd:element form="qualified" minOccurs="0" name="HAN" type="Q1:Han"/>
+      <xsd:element form="qualified" minOccurs="0" name="TMP" type="Q1:Tmp"/>
+      <xsd:element form="qualified" minOccurs="0" name="TMD" type="Q1:Tmd"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="LOC" type="Q1:Loc"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="PCI" type="Q1:Pci"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="PIA" type="Q1:Pia"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_20" type="iftfcc:SegmentGroup20"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_21" type="iftfcc:SegmentGroup21"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_22" type="iftfcc:SegmentGroup22"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_23" type="iftfcc:SegmentGroup23"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup4">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 4:
+       A group of segments to calculate the tax amount for a specified
+       tax type and percentage.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="TAX" type="Q1:Tax"/>
+      <xsd:element form="qualified" minOccurs="0" name="PCD" type="Q1:Pcd"/>
+      <xsd:element form="qualified" maxOccurs="2" minOccurs="0" name="MOA" type="Q1:Moa"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup40">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 40:
+             A group of segments to identify references to a goods
+             item.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup35">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 35:
+          A group of segments to identify a party related to this
+          consignment.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="NAD" type="Q1:Nad"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_36" type="iftfcc:SegmentGroup36"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="RFF" type="Q1:Rff"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup45">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 45:
+             A group of segments to specify the attached equipment and
+             related number of pieces.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="EQA" type="Q1:Eqa"/>
+      <xsd:element form="qualified" minOccurs="0" name="EQN" type="Q1:Eqn"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup42">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 42:
+                            SG44-SG45
+          A group of segments describing equipment details for which
+          the charge(s) of this consignment applies. The charges of
+          this consignment can be specified on message top level (TCC
+          segment group).</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="EQD" type="Q1:Eqd"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="TCC" type="Q1:Tcc"/>
+      <xsd:element form="qualified" minOccurs="0" name="EQN" type="Q1:Eqn"/>
+      <xsd:element form="qualified" minOccurs="0" name="TMD" type="Q1:Tmd"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="MEA" type="Q1:Mea"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="DIM" type="Q1:Dim"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="SEL" type="Q1:Sel"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="TPL" type="Q1:Tpl"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_43" type="iftfcc:SegmentGroup43"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_44" type="iftfcc:SegmentGroup44"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="Segment_group_45" type="iftfcc:SegmentGroup45"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup25">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 25:
+          A group of segments giving a reference to the equipment
+          details (such as contract number) and or providing a cross-
+          reference to a charge item on the message level directly
+          above.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup32">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 32:
+          A group of segments to specify the terms of delivery or
+          transport, applicable to this consignment.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="TOD" type="Q1:Tod"/>
+      <xsd:element form="qualified" maxOccurs="2" minOccurs="0" name="LOC" type="Q1:Loc"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup28">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 28:
+                         SG33-SG34-SG35-SG37-SG42
+       A group of segments describing the different consignments for
+       which the charges apply. The charges can be detailed on message
+       top level (TCC segment group).</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CNI" type="Q1:Cni"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="TCC" type="Q1:Tcc"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="TSR" type="Q1:Tsr"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="MOA" type="Q1:Moa"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_29" type="iftfcc:SegmentGroup29"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_30" type="iftfcc:SegmentGroup30"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_31" type="iftfcc:SegmentGroup31"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="Segment_group_32" type="iftfcc:SegmentGroup32"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_33" type="iftfcc:SegmentGroup33"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="Segment_group_34" type="iftfcc:SegmentGroup34"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="Segment_group_35" type="iftfcc:SegmentGroup35"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="Segment_group_37" type="iftfcc:SegmentGroup37"/>
+      <xsd:element form="qualified" maxOccurs="999" minOccurs="0" name="Segment_group_42" type="iftfcc:SegmentGroup42"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup34">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 34:
+          A group of segments to specify transport details (such as
+          voyage) related to this consignment.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="TDT" type="Q1:Tdt"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="LOC" type="Q1:Loc"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="RFF" type="Q1:Rff"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup7">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 7:
+          A group of segments to specify the price information of the
+          charge. The amount resulting from the price calculation
+          (i.e. quantity x price) is specified in the MOA segment
+          following this PRI-group, either as an intermediate amount
+          (i.e. with other calculations to follow; resulting amounts
+          to be specified in a repeated MOA segment) or as a total
+          charge amount in invoice currency.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="PRI" type="Q1:Pri"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="CUX" type="Q1:Cux"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup5">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 5:
+       A group of segments to specify a default currency or a rate of
+       exchange applicable to the whole message.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CUX" type="Q1:Cux"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

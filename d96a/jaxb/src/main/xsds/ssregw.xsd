@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:Q1="urn:org.milyn.edi.unedifact:un:d96a:common" xmlns:ssregw="urn:org.milyn.edi.unedifact:un:d96a:ssregw" targetNamespace="urn:org.milyn.edi.unedifact:un:d96a:ssregw">
+  <xsd:import namespace="urn:org.milyn.edi.unedifact:un:d96a:common"/>
+  <xsd:element name="SSREGW" type="ssregw:SSREGW"/>
+  <xsd:complexType name="SegmentGroup4">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 4:
+          A group of segments giving details on the person's gender
+          and marital status.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="PDI" type="Q1:Pdi"/>
+      <xsd:element form="qualified" maxOccurs="2" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup1">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 1:
+       A group of segments identifying a previous message, related to
+       the current message.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SSREGW">
+    <xsd:sequence>
+      <xsd:element form="qualified" name="BGM" type="Q1:Bgm"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" name="GIS" type="Q1:Gis"/>
+      <xsd:element form="qualified" minOccurs="0" name="Segment_group_1" type="ssregw:SegmentGroup1"/>
+      <xsd:element form="qualified" maxOccurs="99" name="Segment_group_2" type="ssregw:SegmentGroup2"/>
+      <xsd:element form="qualified" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+      <xsd:element form="qualified" minOccurs="0" name="Segment_group_5" type="ssregw:SegmentGroup5"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup5">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 5:
+       A group of segments specifying the details of authentication.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="AUT" type="Q1:Aut"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup3">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 3:
+          A group of segments giving the person's birth or death
+          details.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" minOccurs="0" name="ADR" type="Q1:Adr"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup2">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 2:
+       A group of segments identifying the parties and/or workers, its
+       or his relatives and giving related information. e.g. giving
+       the workers insurance or identification numbers.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="PNA" type="Q1:Pna"/>
+      <xsd:element form="qualified" minOccurs="0" name="GIR" type="Q1:Gir"/>
+      <xsd:element form="qualified" minOccurs="0" name="NAT" type="Q1:Nat"/>
+      <xsd:element form="qualified" minOccurs="0" name="DOC" type="Q1:Doc"/>
+      <xsd:element form="qualified" maxOccurs="2" minOccurs="0" name="ADR" type="Q1:Adr"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="ATT" type="Q1:Att"/>
+      <xsd:element form="qualified" maxOccurs="2" minOccurs="0" name="Segment_group_3" type="ssregw:SegmentGroup3"/>
+      <xsd:element form="qualified" minOccurs="0" name="Segment_group_4" type="ssregw:SegmentGroup4"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

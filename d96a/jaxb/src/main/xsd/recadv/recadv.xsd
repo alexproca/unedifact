@@ -1,0 +1,413 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:Q1="urn:org.milyn.edi.unedifact:un:d96a:common" xmlns:recadv="urn:org.milyn.edi.unedifact:un:d96a:recadv" targetNamespace="urn:org.milyn.edi.unedifact:un:d96a:recadv">
+  <xsd:import namespace="urn:org.milyn.edi.unedifact:un:d96a:common"/>
+  <xsd:element name="RECADV" type="recadv:RECADV"/>
+  <xsd:complexType name="SegmentGroup20">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 20:
+                A group of segments giving package identification
+                numbers and if required the related anomalies.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="GIN" type="Q1:Gin"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_21" type="recadv:SegmentGroup21"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup6">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 6:
+          A group of segments giving contact details of the specific
+          person or department within the party identified in the NAD
+          segment.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CTA" type="Q1:Cta"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="COM" type="Q1:Com"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup21">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 21:
+                   A group of segments to report the physical state of
+                   the identified package upon receipt and to give the
+                   appropriate instructions if needed.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CDI" type="Q1:Cdi"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="INP" type="Q1:Inp"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup17">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 17:
+          A group of segments identifying packaging, quantities and
+          marks and numbers.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="PAC" type="Q1:Pac"/>
+      <xsd:element form="qualified" minOccurs="0" name="QVR" type="Q1:Qvr"/>
+      <xsd:element form="qualified" maxOccurs="999" minOccurs="0" name="Segment_group_18" type="recadv:SegmentGroup18"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup9">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 9:
+          A group of segments to report discrepancy on locations
+          related to terms of delivery.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="LOC" type="Q1:Loc"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="CDI" type="Q1:Cdi"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup30">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 30:
+                A group of segments to report the physical state of
+                the package upon receipt and to give the appropriate
+                instructions, if needed.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CDI" type="Q1:Cdi"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="INP" type="Q1:Inp"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup18">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 18:
+             A group of segments specifying markings and labels and,
+             if required, related anomalies.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="PCI" type="Q1:Pci"/>
+      <xsd:element form="qualified" minOccurs="0" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_19" type="recadv:SegmentGroup19"/>
+      <xsd:element form="qualified" maxOccurs="999" minOccurs="0" name="Segment_group_20" type="recadv:SegmentGroup20"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup27">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 27:
+                A group of segments to report the physical state of
+                the identified goods at receipt and to give the
+                appropriate instructions, if needed.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CDI" type="Q1:Cdi"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="INP" type="Q1:Inp"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="RECADV">
+    <xsd:sequence>
+      <xsd:element form="qualified" name="BGM" type="Q1:Bgm"/>
+      <xsd:element form="qualified" maxOccurs="10" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="ALI" type="Q1:Ali"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_1" type="recadv:SegmentGroup1"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_2" type="recadv:SegmentGroup2"/>
+      <xsd:element form="qualified" maxOccurs="10" name="Segment_group_4" type="recadv:SegmentGroup4"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_7" type="recadv:SegmentGroup7"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_10" type="recadv:SegmentGroup10"/>
+      <xsd:element form="qualified" maxOccurs="9999" minOccurs="0" name="Segment_group_11" type="recadv:SegmentGroup11"/>
+      <xsd:element form="qualified" maxOccurs="9999" minOccurs="0" name="Segment_group_16" type="recadv:SegmentGroup16"/>
+      <xsd:element form="qualified" minOccurs="0" name="CNT" type="Q1:Cnt"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup3">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 3:
+          A group of segments to report the physical or logical state
+          of the document upon receipt and to give the appropriate
+          instructions if needed.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CDI" type="Q1:Cdi"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="INP" type="Q1:Inp"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup12">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 12:
+          A segment group to report on the physical state of the
+          identified equipment upon receipt and to give the
+          appropriate instructions if needed.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CDI" type="Q1:Cdi"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="INP" type="Q1:Inp"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup5">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 5:
+          A group of segments giving references only relevant to the
+          specified party rather than the whole message.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup4">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 4:
+       A group of segments identifying names, addresses and locations,
+       relevant to the whole Receiving advice.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="NAD" type="Q1:Nad"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="LOC" type="Q1:Loc"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_5" type="recadv:SegmentGroup5"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_6" type="recadv:SegmentGroup6"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup26">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 26:
+             A group of segments giving goods identification numbers
+             and if required the related anomalies.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="GIN" type="Q1:Gin"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_27" type="recadv:SegmentGroup27"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup32">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 32:
+                   A group of segments to report the physical state of
+                   the identified packages upon receipt and to give
+                   the appropriate instructions, if needed.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CDI" type="Q1:Cdi"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="INP" type="Q1:Inp"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup2">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 2:
+       A group of segments identifying the discrepancies with the
+       documentary requirements relating to the whole consignment.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="DOC" type="Q1:Doc"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_3" type="recadv:SegmentGroup3"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup1">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 1:
+       A group of segments giving references where necessary, dates
+       relating to the whole message, e.g. despatch advice, contract
+       number.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup31">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 31:
+                A group of segments giving package identification
+                numbers and if required the related anomalies.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="GIN" type="Q1:Gin"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_32" type="recadv:SegmentGroup32"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup16">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 16:
+       A group of segments providing details of all packages and/or
+       individual items as received. This segment group provides the
+       capability to give the top-down hierarchical relationship of
+       the package levels.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CPS" type="Q1:Cps"/>
+      <xsd:element form="qualified" maxOccurs="9999" minOccurs="0" name="Segment_group_17" type="recadv:SegmentGroup17"/>
+      <xsd:element form="qualified" maxOccurs="9999" minOccurs="0" name="Segment_group_22" type="recadv:SegmentGroup22"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup29">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 29:
+             A group of segments identifying one specific package or a
+             number of packages, the marks and numbers, quantities and
+             receiving conditions.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="PCI" type="Q1:Pci"/>
+      <xsd:element form="qualified" minOccurs="0" name="QTY" type="Q1:Qty"/>
+      <xsd:element form="qualified" minOccurs="0" name="QVR" type="Q1:Qvr"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_30" type="recadv:SegmentGroup30"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_31" type="recadv:SegmentGroup31"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup28">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 28:
+             A group of segments giving references relevant to the
+             line item.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup13">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 13:
+          A group of segments identifying the seal number and
+          reporting anomalies.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="SEL" type="Q1:Sel"/>
+      <xsd:element form="qualified" maxOccurs="10" name="CDI" type="Q1:Cdi"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup25">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 25:
+                A group of segments to report the physical or logical
+                state of the document upon receipt and to give the
+                appropriate instructions if needed.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CDI" type="Q1:Cdi"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="INP" type="Q1:Inp"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup23">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 23:
+             A group of segments to report the physical state of the
+             product given in the LIN or IMD segment upon receipt and
+             to give the appropriate instructions if needed.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CDI" type="Q1:Cdi"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="INP" type="Q1:Inp"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup22">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 22:
+                            SG28-SG29
+          A group of segments providing details of the product or
+          service received.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="LIN" type="Q1:Lin"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="PIA" type="Q1:Pia"/>
+      <xsd:element form="qualified" maxOccurs="25" minOccurs="0" name="IMD" type="Q1:Imd"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="QTY" type="Q1:Qty"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="QVR" type="Q1:Qvr"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_23" type="recadv:SegmentGroup23"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_24" type="recadv:SegmentGroup24"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="Segment_group_26" type="recadv:SegmentGroup26"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_28" type="recadv:SegmentGroup28"/>
+      <xsd:element form="qualified" maxOccurs="9999" minOccurs="0" name="Segment_group_29" type="recadv:SegmentGroup29"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup8">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 8:
+          A group of segments to report on the discrepancy and to give
+          the appropriate instructions, if needed.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CDI" type="Q1:Cdi"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="INP" type="Q1:Inp"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup15">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 15:
+             A segment group to report the physical state of the
+             identified attached equipment upon receipt and to give
+             the appropriate instructions if needed.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CDI" type="Q1:Cdi"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="INP" type="Q1:Inp"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup11">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 11:
+       A group of segments identifying equipment with which a problem
+       has occurred or if required by the recipient of the message for
+       further identification.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="EQD" type="Q1:Eqd"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_12" type="recadv:SegmentGroup12"/>
+      <xsd:element form="qualified" maxOccurs="25" minOccurs="0" name="Segment_group_13" type="recadv:SegmentGroup13"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_14" type="recadv:SegmentGroup14"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup14">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 14:
+          A group of segments identifying attached equipment with
+          which a problem has occurred or if required by the recipient
+          of the message for further identification.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="EQA" type="Q1:Eqa"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_15" type="recadv:SegmentGroup15"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup19">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 19:
+                A group of segments to report the physical state of
+                the package upon receipt and to give the appropriate
+                instructions if needed.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CDI" type="Q1:Cdi"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="INP" type="Q1:Inp"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup24">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 24:
+             A group of segments identifying the discrepancies with
+             the documentary requirements relating to line item.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="DOC" type="Q1:Doc"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_25" type="recadv:SegmentGroup25"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup7">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 7:
+       A group of segments to report on discrepancies on terms of
+       deliveries.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="TOD" type="Q1:Tod"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_8" type="recadv:SegmentGroup8"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="Segment_group_9" type="recadv:SegmentGroup9"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup10">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 10:
+       A group of segments specifying details of the mode and means of
+       transport, the date or date and time of arrival, if a
+       discrepancy has occurred or if required by the recipient of the
+       message for further identification.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="TDT" type="Q1:Tdt"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="CDI" type="Q1:Cdi"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

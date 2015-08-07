@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:Q1="urn:org.milyn.edi.unedifact:un:d96a:common" xmlns:finsta="urn:org.milyn.edi.unedifact:un:d96a:finsta" targetNamespace="urn:org.milyn.edi.unedifact:un:d96a:finsta">
+  <xsd:import namespace="urn:org.milyn.edi.unedifact:un:d96a:common"/>
+  <xsd:element name="FINSTA" type="finsta:FINSTA"/>
+  <xsd:complexType name="FINSTA">
+    <xsd:sequence>
+      <xsd:element form="qualified" name="BGM" type="Q1:Bgm"/>
+      <xsd:element form="qualified" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" minOccurs="0" name="Segment_group_1" type="finsta:SegmentGroup1"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="Segment_group_2" type="finsta:SegmentGroup2"/>
+      <xsd:element form="qualified" maxOccurs="3" minOccurs="0" name="Segment_group_3" type="finsta:SegmentGroup3"/>
+      <xsd:element form="qualified" maxOccurs="9999" name="Segment_group_4" type="finsta:SegmentGroup4"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="CNT" type="Q1:Cnt"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="Segment_group_7" type="finsta:SegmentGroup7"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup5">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 5:
+          A group of segments indicating the balance of the account,
+          its type and the respective dates (e.g. opening balance,
+          final closing balance, etc.).</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="MOA" type="Q1:Moa"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup7">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 7:
+       A group of segments specifying details of any authentication
+       (validation) procedures applied to the FINSTA message.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="AUT" type="Q1:Aut"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup4">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 4:
+       A group of segments specifying details related to the account
+       and type of account, such as statement number, balance,
+       relevant amounts and dates.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="LIN" type="Q1:Lin"/>
+      <xsd:element form="qualified" name="FII" type="Q1:Fii"/>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+      <xsd:element form="qualified" maxOccurs="99" name="Segment_group_5" type="finsta:SegmentGroup5"/>
+      <xsd:element form="qualified" maxOccurs="9999" minOccurs="0" name="Segment_group_6" type="finsta:SegmentGroup6"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup3">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 3:
+       A group of segments identifying the name(s) and address(es) of
+       non-financial parties involved in the transaction, their
+       function and their contacts.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="NAD" type="Q1:Nad"/>
+      <xsd:element form="qualified" minOccurs="0" name="CTA" type="Q1:Cta"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="COM" type="Q1:Com"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup1">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 1:
+       A group of segments identifying a previously-sent message.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup6">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 6:
+          A group of segments providing references, value and entry
+          dates, the business function of the booked items, amounts,
+          type and status.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="SEQ" type="Q1:Seq"/>
+      <xsd:element form="qualified" maxOccurs="5" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" maxOccurs="2" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" name="BUS" type="Q1:Bus"/>
+      <xsd:element form="qualified" name="MOA" type="Q1:Moa"/>
+      <xsd:element form="qualified" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup2">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 2:
+       A group of segments identifying the financial institutions
+       involved in the financial statement of an account message,
+       their functions and and their contacts.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="FII" type="Q1:Fii"/>
+      <xsd:element form="qualified" minOccurs="0" name="CTA" type="Q1:Cta"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="COM" type="Q1:Com"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

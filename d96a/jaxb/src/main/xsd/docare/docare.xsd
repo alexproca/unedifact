@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:Q1="urn:org.milyn.edi.unedifact:un:d96a:common" xmlns:docare="urn:org.milyn.edi.unedifact:un:d96a:docare" targetNamespace="urn:org.milyn.edi.unedifact:un:d96a:docare">
+  <xsd:import namespace="urn:org.milyn.edi.unedifact:un:d96a:common"/>
+  <xsd:element name="DOCARE" type="docare:DOCARE"/>
+  <xsd:complexType name="SegmentGroup1">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 1:
+       A group of segments identifying the financial institutions and
+       account numbers involved in the documentary credit, their
+       functions and notification references.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="FII" type="Q1:Fii"/>
+      <xsd:element form="qualified" maxOccurs="2" minOccurs="0" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="CTA" type="Q1:Cta"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="COM" type="Q1:Com"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup3">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 3:
+       A group of segments specifying details of any authentication
+       (validation) procedures applied to the DOCARE message.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="AUT" type="Q1:Aut"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="DOCARE">
+    <xsd:sequence>
+      <xsd:element form="qualified" name="BGM" type="Q1:Bgm"/>
+      <xsd:element form="qualified" maxOccurs="2" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="5" name="Segment_group_1" type="docare:SegmentGroup1"/>
+      <xsd:element form="qualified" maxOccurs="9" name="Segment_group_2" type="docare:SegmentGroup2"/>
+      <xsd:element form="qualified" minOccurs="0" name="Segment_group_3" type="docare:SegmentGroup3"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup2">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 2:
+       A group of segments identifying the name and address of each
+       non-financial party involved in the transaction, their
+       functions and notification references.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="NAD" type="Q1:Nad"/>
+      <xsd:element form="qualified" minOccurs="0" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="CTA" type="Q1:Cta"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="COM" type="Q1:Com"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:Q1="urn:org.milyn.edi.unedifact:un:d96a:common" xmlns:bopdir="urn:org.milyn.edi.unedifact:un:d96a:bopdir" targetNamespace="urn:org.milyn.edi.unedifact:un:d96a:bopdir">
+  <xsd:import namespace="urn:org.milyn.edi.unedifact:un:d96a:common"/>
+  <xsd:element name="BOPDIR" type="bopdir:BOPDIR"/>
+  <xsd:complexType name="SegmentGroup5">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 5:
+             A group of segments to give references and dates of the
+             transaction.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup14">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 14:
+                A group of segments to give the identification and the
+                quantity of shares.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="GIR" type="Q1:Gir"/>
+      <xsd:element form="qualified" minOccurs="0" name="QTY" type="Q1:Qty"/>
+      <xsd:element form="qualified" minOccurs="0" name="PRI" type="Q1:Pri"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup3">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 3:
+       A group of segments to accommodate the details relevant to the
+       transactions performed via one account during the relevant
+       period.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="LIN" type="Q1:Lin"/>
+      <xsd:element form="qualified" name="FII" type="Q1:Fii"/>
+      <xsd:element form="qualified" maxOccurs="9999" name="Segment_group_4" type="bopdir:SegmentGroup4"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup7">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 7:
+       A group of segments to accommodate the details relevant to the
+       transactions performed via one account during the relevant
+       period.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="LIN" type="Q1:Lin"/>
+      <xsd:element form="qualified" name="RCS" type="Q1:Rcs"/>
+      <xsd:element form="qualified" minOccurs="0" name="FII" type="Q1:Fii"/>
+      <xsd:element form="qualified" minOccurs="0" name="NAD" type="Q1:Nad"/>
+      <xsd:element form="qualified" maxOccurs="2" name="MOA" type="Q1:Moa"/>
+      <xsd:element form="qualified" maxOccurs="9999" minOccurs="0" name="Segment_group_8" type="bopdir:SegmentGroup8"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup4">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 4:
+          A group of segments to give the nature and the amount of
+          each transaction processed via one account during the
+          relevant period.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RCS" type="Q1:Rcs"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+      <xsd:element form="qualified" minOccurs="0" name="Segment_group_5" type="bopdir:SegmentGroup5"/>
+      <xsd:element form="qualified" maxOccurs="2" name="NAD" type="Q1:Nad"/>
+      <xsd:element form="qualified" name="Segment_group_6" type="bopdir:SegmentGroup6"/>
+      <xsd:element form="qualified" maxOccurs="4" minOccurs="0" name="LOC" type="Q1:Loc"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup13">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 13:
+             A group of segments to provide specific details on the
+             type of question for that specific survey.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="SEQ" type="Q1:Seq"/>
+      <xsd:element form="qualified" minOccurs="0" name="Segment_group_14" type="bopdir:SegmentGroup14"/>
+      <xsd:element form="qualified" maxOccurs="999" name="Segment_group_15" type="bopdir:SegmentGroup15"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup11">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 11:
+       A group of segments to give for all type of surveys the
+       relevant information.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" maxOccurs="99" name="Segment_group_12" type="bopdir:SegmentGroup12"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="BOPDIR">
+    <xsd:sequence>
+      <xsd:element form="qualified" name="BGM" type="Q1:Bgm"/>
+      <xsd:element form="qualified" maxOccurs="3" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="2" minOccurs="0" name="Segment_group_1" type="bopdir:SegmentGroup1"/>
+      <xsd:element form="qualified" maxOccurs="2" name="Segment_group_2" type="bopdir:SegmentGroup2"/>
+      <xsd:element form="qualified" maxOccurs="999" minOccurs="0" name="Segment_group_3" type="bopdir:SegmentGroup3"/>
+      <xsd:element form="qualified" name="UNS" type="Q1:Uns"/>
+      <xsd:element form="qualified" maxOccurs="999" minOccurs="0" name="Segment_group_7" type="bopdir:SegmentGroup7"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="Segment_group_11" type="bopdir:SegmentGroup11"/>
+      <xsd:element form="qualified" minOccurs="0" name="Segment_group_16" type="bopdir:SegmentGroup16"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup2">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 2:
+       A group of segments to give the identification of the reporting
+       agent (generally the enterprise) or, possibly with a second
+       occurrence, the identification of the enterprise on behalf of
+       which the declaration is made.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="NAD" type="Q1:Nad"/>
+      <xsd:element form="qualified" minOccurs="0" name="CTA" type="Q1:Cta"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="COM" type="Q1:Com"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup6">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 6:
+             A group of segments to give the amount and the currency
+             details of that transaction.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="MOA" type="Q1:Moa"/>
+      <xsd:element form="qualified" minOccurs="0" name="CUX" type="Q1:Cux"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup10">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 10:
+             A group of segments to give references and dates of the
+             transaction.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup16">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 16:
+       A group of segments to specify the details of authentication.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="AUT" type="Q1:Aut"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup1">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 1:
+       A group of segments to give auxiliary references and the
+       relevant dates for the message itself.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup9">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 9:
+             A group of segments to give the identification and the
+             quantity of security.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="GIR" type="Q1:Gir"/>
+      <xsd:element form="qualified" minOccurs="0" name="QTY" type="Q1:Qty"/>
+      <xsd:element form="qualified" minOccurs="0" name="PRI" type="Q1:Pri"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup12">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 12:
+          A group of segments to give the relevant information for the
+          specific survey.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RCS" type="Q1:Rcs"/>
+      <xsd:element form="qualified" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+      <xsd:element form="qualified" maxOccurs="9999" name="Segment_group_13" type="bopdir:SegmentGroup13"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup15">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 15:
+                A group of segments to give the amount/currency and
+                the identity of the non-resident debtor/creditor.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="MOA" type="Q1:Moa"/>
+      <xsd:element form="qualified" minOccurs="0" name="NAD" type="Q1:Nad"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup8">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 8:
+          A group of segments to give the type, the amount and the
+          relevant details of each different transaction performed via
+          the account.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RCS" type="Q1:Rcs"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+      <xsd:element form="qualified" minOccurs="0" name="Segment_group_9" type="bopdir:SegmentGroup9"/>
+      <xsd:element form="qualified" minOccurs="0" name="Segment_group_10" type="bopdir:SegmentGroup10"/>
+      <xsd:element form="qualified" minOccurs="0" name="FII" type="Q1:Fii"/>
+      <xsd:element form="qualified" minOccurs="0" name="NAD" type="Q1:Nad"/>
+      <xsd:element form="qualified" name="MOA" type="Q1:Moa"/>
+      <xsd:element form="qualified" maxOccurs="4" minOccurs="0" name="LOC" type="Q1:Loc"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

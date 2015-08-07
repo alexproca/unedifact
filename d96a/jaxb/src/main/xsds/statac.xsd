@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:Q1="urn:org.milyn.edi.unedifact:un:d96a:common" xmlns:statac="urn:org.milyn.edi.unedifact:un:d96a:statac" targetNamespace="urn:org.milyn.edi.unedifact:un:d96a:statac">
+  <xsd:import namespace="urn:org.milyn.edi.unedifact:un:d96a:common"/>
+  <xsd:element name="STATAC" type="statac:STATAC"/>
+  <xsd:complexType name="STATAC">
+    <xsd:sequence>
+      <xsd:element form="qualified" name="BGM" type="Q1:Bgm"/>
+      <xsd:element form="qualified" maxOccurs="5" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="CUX" type="Q1:Cux"/>
+      <xsd:element form="qualified" maxOccurs="5" name="Segment_group_1" type="statac:SegmentGroup1"/>
+      <xsd:element form="qualified" maxOccurs="200000" name="Segment_group_3" type="statac:SegmentGroup3"/>
+      <xsd:element form="qualified" name="UNS" type="Q1:Uns"/>
+      <xsd:element form="qualified" maxOccurs="5" name="MOA" type="Q1:Moa"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup1">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 1:
+       A group of segments identifying the parties involved in the
+       transaction and, optionally the contact points and numbers.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="NAD" type="Q1:Nad"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="Segment_group_2" type="statac:SegmentGroup2"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup3">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 3:
+       A group of segments providing details of all documents, e.g.
+       invoices, credit notes, etc, to which the Statement of Account
+       refers. It contains details of the monetary values associated
+       with the documents and of relevant dates. There must be at
+       least one occurrence of this group within the Statement of
+       Account Message.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="DOC" type="Q1:Doc"/>
+      <xsd:element form="qualified" maxOccurs="5" name="MOA" type="Q1:Moa"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="RFF" type="Q1:Rff"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup2">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 2:
+          A group of segments identifying the contact person or
+          department for a trading party and specifying the
+          communication channel and number.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CTA" type="Q1:Cta"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="COM" type="Q1:Com"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:Q1="urn:org.milyn.edi.unedifact:un:d96a:common" xmlns:prodex="urn:org.milyn.edi.unedifact:un:d96a:prodex" targetNamespace="urn:org.milyn.edi.unedifact:un:d96a:prodex">
+  <xsd:import namespace="urn:org.milyn.edi.unedifact:un:d96a:common"/>
+  <xsd:element name="PRODEX" type="prodex:PRODEX"/>
+  <xsd:complexType name="SegmentGroup2">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 2:
+       A group of segments giving transaction details of the product
+       groups exchanged and opening and closing balances for the
+       accounting period (or as a result of the transactions).</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="IMD" type="Q1:Imd"/>
+      <xsd:element form="qualified" maxOccurs="10" minOccurs="0" name="QTY" type="Q1:Qty"/>
+      <xsd:element form="qualified" maxOccurs="9999" minOccurs="0" name="Segment_group_3" type="prodex:SegmentGroup3"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup3">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 3:
+          A group of segments giving transaction details for each
+          exchange transaction effected during the period.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="LIN" type="Q1:Lin"/>
+      <xsd:element form="qualified" maxOccurs="2" minOccurs="0" name="GIS" type="Q1:Gis"/>
+      <xsd:element form="qualified" maxOccurs="2" minOccurs="0" name="LOC" type="Q1:Loc"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="MEA" type="Q1:Mea"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="QTY" type="Q1:Qty"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="TDT" type="Q1:Tdt"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="Segment_group_4" type="prodex:SegmentGroup4"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup1">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 1:
+       A segment group to give the relevant exchange references
+       (contract number with -if necessary- its dates) relating to the
+       whole message.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup4">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 4:
+             A group of segments identifying some unique number for
+             each transaction.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="PRODEX">
+    <xsd:sequence>
+      <xsd:element form="qualified" name="BGM" type="Q1:Bgm"/>
+      <xsd:element form="qualified" maxOccurs="2" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" name="MEA" type="Q1:Mea"/>
+      <xsd:element form="qualified" maxOccurs="2" name="NAD" type="Q1:Nad"/>
+      <xsd:element form="qualified" maxOccurs="5" name="Segment_group_1" type="prodex:SegmentGroup1"/>
+      <xsd:element form="qualified" maxOccurs="99" name="Segment_group_2" type="prodex:SegmentGroup2"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

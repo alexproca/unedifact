@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:Q1="urn:org.milyn.edi.unedifact:un:d96a:common" xmlns:supman="urn:org.milyn.edi.unedifact:un:d96a:supman" targetNamespace="urn:org.milyn.edi.unedifact:un:d96a:supman">
+  <xsd:import namespace="urn:org.milyn.edi.unedifact:un:d96a:common"/>
+  <xsd:element name="SUPMAN" type="supman:SUPMAN"/>
+  <xsd:complexType name="SegmentGroup3">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 3:
+       A group of segments providing the required maintenance
+       information for each member. General indicators are given to
+       identify the type of the maintenance information for processing
+       purposes.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="NAD" type="Q1:Nad"/>
+      <xsd:element form="qualified" maxOccurs="15" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="ATT" type="Q1:Att"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="Segment_group_4" type="supman:SegmentGroup4"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_5" type="supman:SegmentGroup5"/>
+      <xsd:element form="qualified" maxOccurs="20" name="Segment_group_7" type="supman:SegmentGroup7"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_8" type="supman:SegmentGroup8"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup8">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 8:
+          A group of segments identifying membership processing
+          details related to status, benefits and contributions.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="MEM" type="Q1:Mem"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_9" type="supman:SegmentGroup9"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="Segment_group_10" type="supman:SegmentGroup10"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup4">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 4:
+          A group of segments identifying details of any
+          beneficiaries.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="REL" type="Q1:Rel"/>
+      <xsd:element form="qualified" name="NAD" type="Q1:Nad"/>
+      <xsd:element form="qualified" minOccurs="0" name="PCD" type="Q1:Pcd"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup6">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 6:
+             A group of segments identifying the member's salary.
+             Repeats are to provide additional salary information such
+             as the notional salary amount, the superannuation salary
+             amount etc.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="MOA" type="Q1:Moa"/>
+      <xsd:element form="qualified" minOccurs="0" name="PAT" type="Q1:Pat"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup7">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 7:
+          A group of segments providing general indicators for
+          processing and associated dates where appropriate.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="GIS" type="Q1:Gis"/>
+      <xsd:element form="qualified" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup10">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 10:
+             A group of segments identifying member contribution
+             amount details and their type. This segment group may be
+             used to identify the rate or amount of any additional/
+             voluntary contributions. It may also be used for periodic
+             reviews, or for other relevant purposes.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="COT" type="Q1:Cot"/>
+      <xsd:element form="qualified" minOccurs="0" name="MOA" type="Q1:Moa"/>
+      <xsd:element form="qualified" minOccurs="0" name="PCD" type="Q1:Pcd"/>
+      <xsd:element form="qualified" maxOccurs="3" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" minOccurs="0" name="PAT" type="Q1:Pat"/>
+      <xsd:element form="qualified" maxOccurs="3" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup5">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 5:
+          A group of segments providing employment related
+          information. The segment group allows for the case that the
+          same member is employed more than once, if required.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="EMP" type="Q1:Emp"/>
+      <xsd:element form="qualified" minOccurs="0" name="PCD" type="Q1:Pcd"/>
+      <xsd:element form="qualified" minOccurs="0" name="CUX" type="Q1:Cux"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="NAD" type="Q1:Nad"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_6" type="supman:SegmentGroup6"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup2">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 2:
+          A group of segments identifying contact persons or
+          department and their communication number.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="CTA" type="Q1:Cta"/>
+      <xsd:element form="qualified" minOccurs="0" name="COM" type="Q1:Com"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup1">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 1:
+       A group of segments identifying names and addresses relevant to
+       the Superannuation Maintenance message.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="NAD" type="Q1:Nad"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="Segment_group_2" type="supman:SegmentGroup2"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup9">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 9:
+             A group of segments identifying any additional member
+             attributes.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="ATT" type="Q1:Att"/>
+      <xsd:element form="qualified" minOccurs="0" name="PCD" type="Q1:Pcd"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SUPMAN">
+    <xsd:sequence>
+      <xsd:element form="qualified" name="BGM" type="Q1:Bgm"/>
+      <xsd:element form="qualified" maxOccurs="6" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" minOccurs="0" name="CUX" type="Q1:Cux"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="5" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+      <xsd:element form="qualified" maxOccurs="6" minOccurs="0" name="Segment_group_1" type="supman:SegmentGroup1"/>
+      <xsd:element form="qualified" name="UNS" type="Q1:Uns"/>
+      <xsd:element form="qualified" maxOccurs="999999" name="Segment_group_3" type="supman:SegmentGroup3"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="CNT" type="Q1:Cnt"/>
+      <xsd:element form="qualified" minOccurs="0" name="AUT" type="Q1:Aut"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>

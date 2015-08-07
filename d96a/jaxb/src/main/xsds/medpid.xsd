@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:Q1="urn:org.milyn.edi.unedifact:un:d96a:common" xmlns:medpid="urn:org.milyn.edi.unedifact:un:d96a:medpid" targetNamespace="urn:org.milyn.edi.unedifact:un:d96a:medpid">
+  <xsd:import namespace="urn:org.milyn.edi.unedifact:un:d96a:common"/>
+  <xsd:element name="MEDPID" type="medpid:MEDPID"/>
+  <xsd:complexType name="SegmentGroup6">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 6:
+       A segment group specifying the authentication procedure
+       applied.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="AUT" type="Q1:Aut"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="MEDPID">
+    <xsd:sequence>
+      <xsd:element form="qualified" name="BGM" type="Q1:Bgm"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+      <xsd:element form="qualified" maxOccurs="99" name="Segment_group_1" type="medpid:SegmentGroup1"/>
+      <xsd:element form="qualified" maxOccurs="9999" name="Segment_group_2" type="medpid:SegmentGroup2"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_6" type="medpid:SegmentGroup6"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup4">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 4:
+          A segment group for specifying communication numbers and
+          contacts of the actual person.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="COM" type="Q1:Com"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="CTA" type="Q1:Cta"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup3">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 3:
+          A segment group for specifying person demographic
+          information valid at a specific date/time/period.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="PDI" type="Q1:Pdi"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup5">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 5:
+          A segment group identifying any related person or additional
+          names of the actual person.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="REL" type="Q1:Rel"/>
+      <xsd:element form="qualified" minOccurs="0" name="PNA" type="Q1:Pna"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="ADR" type="Q1:Adr"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" minOccurs="0" name="PDI" type="Q1:Pdi"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="IHC" type="Q1:Ihc"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="NAT" type="Q1:Nat"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="LAN" type="Q1:Lan"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup2">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 2:
+                         FII-CTA-SG3-SG4-SG5
+       This segment group contains information about a person.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="GIS" type="Q1:Gis"/>
+      <xsd:element form="qualified" minOccurs="0" name="PNA" type="Q1:Pna"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="ADR" type="Q1:Adr"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="DTM" type="Q1:Dtm"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="IHC" type="Q1:Ihc"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="NAT" type="Q1:Nat"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="FTX" type="Q1:Ftx"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="LAN" type="Q1:Lan"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="HAN" type="Q1:Han"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="LOC" type="Q1:Loc"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="FII" type="Q1:Fii"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="CTA" type="Q1:Cta"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_3" type="medpid:SegmentGroup3"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="Segment_group_4" type="medpid:SegmentGroup4"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="Segment_group_5" type="medpid:SegmentGroup5"/>
+    </xsd:sequence>
+  </xsd:complexType>
+  <xsd:complexType name="SegmentGroup1">
+    <xsd:annotation>
+      <xsd:appinfo source="smooks-mapping-data">Segment group 1:
+       This segment group is used to transfer information about the
+       parties involved in the actual data interchange. Also
+       information about parties to receive copies may be specified.</xsd:appinfo>
+    </xsd:annotation>
+    <xsd:sequence>
+      <xsd:element form="qualified" name="PNA" type="Q1:Pna"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="ADR" type="Q1:Adr"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="CTA" type="Q1:Cta"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="COM" type="Q1:Com"/>
+      <xsd:element form="qualified" maxOccurs="99" minOccurs="0" name="RFF" type="Q1:Rff"/>
+      <xsd:element form="qualified" maxOccurs="9" minOccurs="0" name="LAN" type="Q1:Lan"/>
+    </xsd:sequence>
+  </xsd:complexType>
+</xsd:schema>
